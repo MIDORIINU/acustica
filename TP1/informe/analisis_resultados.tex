@@ -1,0 +1,43 @@
+\par Los requerimientos de la obra especifican que las pantallas a utilizar deben ser categoría $B_3$ en aislamiento al ruido aéreo y categoría $A_3$ en absorción sonora.
+
+Dado los resultados obtenidos en las secciones anteriores podemos definir:
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{|c|c|c|c|} \hline
+        Característica & Categoría Requerida & Categoría Obtenida & Cumple \\ \hline \hline
+        Aislamiento al ruido aéreo & $B_3$ & $B_3$ & Sí \\ \hline
+        Absorción sonora & $A_3$ & $A_2$ & \textbf{No} \\ \hline
+    \end{tabular}
+    \caption{Análisis final de los resultados para ruido ferroviario}
+    \label{tab:analisis_final_ferroviario}
+\end{table}
+
+\par Por lo tanto, queda en evidencia que el panel \textbf{no cumple} con las especificaciones requeridas.\\
+
+\par En el caso que los paneles se quieran instalar en una autopista y los requerimientos acústicos fueran los mismos, utilizamos las mismas mediciones pero al momento de calcular los índices de evaluación, se utilizan los espectros normalizados de ruido de tráfico (UNE-EN 1793-3). Se obtienen los siguientes valores de índices
+
+\begin{equation}
+    DL_R\text{(Tráfico)} =28.0657\approx 28
+\end{equation}
+\begin{equation}
+    DL_\alpha \text{(Tráfico)} = 7.3446\approx 7  
+\end{equation}
+
+\par En este caso podemos ver en el cuadro~\tableref{tab:analisis_final_trafico}:
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{|c|c|c|c|} \hline
+        Característica & Categoría Requerida & Categoría Obtenida & Cumple \\ \hline \hline
+        Aislamiento al ruido aéreo & $B_3$ & $B_3$ & Sí \\ \hline
+        Absorción sonora & $A_3$ & $A_2$ & \textbf{No} \\ \hline
+    \end{tabular}
+    \caption{Análisis final de los resultados para ruido de tráfico}
+    \label{tab:analisis_final_trafico}
+\end{table}
+
+\par El desempeño mejora para el caso de ruido de tráfico para el caso de absorción. El espectro es importante para analizar que ruidos tienen dominancia (graves o agudos) y a partir de esto decidir si el material es adecuado para lo que necesitamos. En el caso de los ruidos ferroviarios, predominan los ruidos agudos, y en el caso del tráfico, los graves. Aún así, observamos que estamos en la misma situación que en el caso de ruido ferroviario y \textbf{no se cumplen} las características suficientes para cumplir con los requerimientos.
+
+
+
