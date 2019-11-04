@@ -107,7 +107,7 @@ hold off;
 
 
 fprintf(...
-    'Salvando el gráfico de la posición en un archivo "PNG"......');
+    'Salvando el gráfico en un archivo "PNG"......');
 
 % Salvo el gráfico en un archivo.
 saveas(figure1, fullfile(images_directory, ...
@@ -160,7 +160,7 @@ set(legend1b,...
 
 
 fprintf(...
-    'Salvando el gráfico de la posición en un archivo "PNG"......');
+    'Salvando el gráfico en un archivo "PNG"......');
 
 % Salvo el gráfico en un archivo.
 saveas(figure1b, fullfile(images_directory, ...
@@ -217,7 +217,7 @@ hold off;
 
 
 fprintf(...
-    'Salvando el gráfico de la posición en un archivo "PNG"......');
+    'Salvando el gráfico en un archivo "PNG"......');
 
 % Salvo el gráfico en un archivo.
 saveas(figure2, fullfile(images_directory, ...
@@ -258,7 +258,7 @@ set(axes2b,'XGrid','on','XMinorGrid','off','XTick',...
 xtickangle(axes2b,45);
 
 fprintf(...
-    'Salvando el gráfico de la posición en un archivo "PNG"......');
+    'Salvando el gráfico en un archivo "PNG"......');
 
 % Salvo el gráfico en un archivo.
 saveas(figure2b, fullfile(images_directory, ...
@@ -344,7 +344,7 @@ hold off;
 
 
 fprintf(...
-    'Salvando el gráfico de la posición en un archivo "PNG"......');
+    'Salvando el gráfico en un archivo "PNG"......');
 
 % Salvo el gráfico en un archivo.
 saveas(figure3, fullfile(images_directory, ...
@@ -393,7 +393,7 @@ set(legend3b,...
 
 
 fprintf(...
-    'Salvando el gráfico de la posición en un archivo "PNG"......');
+    'Salvando el gráfico en un archivo "PNG"......');
 
 % Salvo el gráfico en un archivo.
 saveas(figure3b, fullfile(images_directory, ...
@@ -449,7 +449,7 @@ hold off;
 
 
 fprintf(...
-    'Salvando el gráfico de la posición en un archivo "PNG"......');
+    'Salvando el gráfico en un archivo "PNG"......');
 
 % Salvo el gráfico en un archivo.
 saveas(figure4, fullfile(images_directory, ...
@@ -471,7 +471,7 @@ hold(axes4b,'on');
 % Create multiple lines using matrix input to bar
 bar4 = bar(axes4b, alfa);
 set(bar4,'DisplayName','Coeficiente de absorción sonora', 'FaceColor', [0.3 0.3 0.1]);
-
+% 
 % Create ylabel
 ylabel(axes4b, '\alpha');
 
@@ -491,7 +491,7 @@ set(axes4b,'XGrid','on','XMinorGrid','off','XTick',...
 xtickangle(axes4b,45);
 
 fprintf(...
-    'Salvando el gráfico de la posición en un archivo "PNG"......');
+    'Salvando el gráfico en un archivo "PNG"......');
 
 % Salvo el gráfico en un archivo.
 saveas(figure4b, fullfile(images_directory, ...
