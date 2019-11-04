@@ -3,6 +3,8 @@
 \par A partir de las mediciones realizadas se obtuvieron los datos presentados en la Tabla~\tableref{tab:Niveles_sonoros_y_tiempos_de_reverberacion_medidos}.
 
 \begin{table}[H]
+\setlength\arrayrulewidth{1pt}
+\arrayrulecolor{TABLEColor}
     \centering
     \begin{tabular}{|c|c|c|c|c|} \hline
         \textbf{Banda} & \textbf{L1 (dB)} & \textbf{L2 (dB)} & \textbf{RF (dB)} & \textbf{TR (s)} \\ \hline \hline
@@ -41,7 +43,7 @@ $$
         = 10 \cdot log \Big(\sum^{18}_{i=1} 10^{{L_i}\cdot0.1} \Big) -10 \cdot log  \Big( \sum_{i=1}^{18} 10^{L_i\cdot0.1} \cdot 10^{-R_i\cdot0.1} \Big) $$
     
 \begin{equation}
-        DL_R = -10\cdot log \Big( \frac{\sum_{i=1}^{18} 10^{0.1 \cdot L_i} \cdot 10^{-0.1 \cdot R_i}}{\sum^{18}_{i=1} 10^{0.1 \cdot L_i} }\Big)
+        \mathcolorbox{EQColor}{DL_R = -10\cdot log \Big( \frac{\sum_{i=1}^{18} 10^{0.1 \cdot L_i} \cdot 10^{-0.1 \cdot R_i}}{\sum^{18}_{i=1} 10^{0.1 \cdot L_i} }\Big)}
     \label{eq:DL_R}
 \end{equation}
 
@@ -82,6 +84,8 @@ $$
 \par A partir de estas relaciones, logramos obtener los valores del Índice de Reducción Sonora ($R_i$) plasmados en la Tabla~\tableref{tab:reduccion_sonora_R}:
 
 \begin{table}[H]
+\setlength\arrayrulewidth{1pt}
+\arrayrulecolor{TABLEColor}
     \centering
     \begin{tabular}{|c|c|} \hline
         \textbf{Banda} & \textbf{R[dB]} \\\hline
@@ -156,12 +160,14 @@ $$
 \par A partir de los datos de la Tabla~\tableref{tab:Niveles_sonoros_y_tiempos_de_reverberacion_medidos}, los valores de R obtenidos y de la ecuación~\eqref{eq:DL_R}, se obtiene el Índice de evaluación del aislamiento acústico:
 
 \begin{equation*}
-    DL_R =   29.5887 \approx 30
+    \boxed{DL_R =   29.5887 \approx 30}
 \end{equation*}
 
 \par Para definir la categoría a la que pertenece la pantalla utilizada, es necesario conocer los valores de $DL_R$ asignados de acuerdo a la clasificación de la norma UNE-EN 1793-2:2014, Anexo A, presentados en el Cuadro 4. 
 
 \begin{table}[H]
+\setlength\arrayrulewidth{1pt}
+\arrayrulecolor{TABLEColor}
     \centering
     \begin{tabular}{|c|c|} \hline
         \textbf{Categoría} & \textbf{$DL_R$ en dB} \\ \hline \hline

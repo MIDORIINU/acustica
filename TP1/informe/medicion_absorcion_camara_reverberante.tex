@@ -4,6 +4,8 @@ Durante el ensayo se utilizan 2 posiciones diferentes de las fuentes sonoras y 6
 
 
 \begin{table}[H]
+\setlength\arrayrulewidth{1pt}
+\arrayrulecolor{TABLEColor}
     \centering
     \begin{tabular}{|c|c|c|} \hline
         \textbf{Banda TR} & \textbf{Sala con muestra (T2)}& \textbf{TR Sala vacía (T1)} \\ \hline \hline
@@ -33,7 +35,7 @@ Durante el ensayo se utilizan 2 posiciones diferentes de las fuentes sonoras y 6
 \par En este caso, se desea clasificar la pantalla implementada de acuerdo a las categorías de la norma UNE-EN 1793-2: \quotemarks{Características intrínsecas relativas al aislamiento al ruido aéreo en condiciones de campo sonoro difuso}. Para ello, se calcula el número global:
 
 \begin{equation}
-        DL_\alpha = -10\cdot log \big( \frac{\sum_{i=1}^{18} 10^{0.1 \cdot L_i} \cdot \alpha_{si} }{\sum^{18}_{i=1} 10^{0.1 \cdot L_i} }\big)
+         \mathcolorbox{EQColor}{DL_\alpha = -10\cdot log \big( \frac{\sum_{i=1}^{18} 10^{0.1 \cdot L_i} \cdot \alpha_{si} }{\sum^{18}_{i=1} 10^{0.1 \cdot L_i} }\big)}
     \label{eq:DL_a}
 \end{equation}
 
@@ -88,6 +90,8 @@ Durante el ensayo se utilizan 2 posiciones diferentes de las fuentes sonoras y 6
 
 
 \begin{table}[]
+\setlength\arrayrulewidth{1pt}
+\arrayrulecolor{TABLEColor}
     \centering
     \begin{tabular}{|c|c|} \hline
         \textbf{Banda} & Coef Absorcion \\ \hline \hline
@@ -132,13 +136,15 @@ Durante el ensayo se utilizan 2 posiciones diferentes de las fuentes sonoras y 6
 \par A partir de dichos resultados, podemos obtener el valor de evaluación:
 
 \begin{equation}
-    DL_{\alpha} =  6.4780 \approx 6
+    \boxed{DL_{\alpha} =  6.4780 \approx 6}
 \end{equation}
 
 \par Por lo tanto, podemos confirmar que el material cumple con la categoría $A_2$.
 
 
 \begin{table}[H]
+\setlength\arrayrulewidth{1pt}
+\arrayrulecolor{TABLEColor}
     \centering
     \begin{tabular}{|c|c|} \hline
         \textbf{Categoría} & \textbf{$DL_\alpha$ en dB} \\ \hline \hline
@@ -149,6 +155,6 @@ Durante el ensayo se utilizan 2 posiciones diferentes de las fuentes sonoras y 6
         A4& 12 a 15 \\ \hline
         A5& $DL_\alpha >15$ \\ \hline
     \end{tabular}
-    \caption{Caption}
+    \caption{Categorías}
     \label{tab:my_label}
 \end{table}
