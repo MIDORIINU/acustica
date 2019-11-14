@@ -32,10 +32,17 @@ Durante el ensayo se utilizan 2 posiciones diferentes de las fuentes sonoras y 6
     \label{tab:Tiempos_reverberacion}
 \end{table}
 
-\par En este caso, se desea clasificar la pantalla implementada de acuerdo a las categorías de la norma UNE-EN 1793-2: \quotemarks{Características intrínsecas relativas al aislamiento al ruido aéreo en condiciones de campo sonoro difuso}. Para ello, se calcula el número global:
+\par En este caso, se desea clasificar la pantalla implementada de acuerdo a las categorías de la norma UNE-EN 1793-2: \quotemarks{Características intrínsecas relativas al aislamiento al ruido aéreo en condiciones de campo sonoro difuso}. Para ello, se realiza nuevamente una simulación utilizando los datos determinados por la norma UNE-EN 1793-3, mediante los cuáles se calcula el número global el cual equivale a la suma energética del espectro de ruido normalizado ferroviario, ponderado A, menos la suma escalada con el factor $\alpha_i$ por cada componente de frecuencia especificado en la norma. Se obtiene finalmente la media ponderada respecto a $\alpha$ como valor determinante del resultado de $DL_\alpha$.
+
+$$
+        DL_\alpha  = 10 \cdot log \Big(\sum^{18}_{i=1} 10^{{L_i}/{10}} \Big) - 10 \cdot log  \Big( \sum_{i=1}^{18} 10^{{L_i}/{10}} - \sum_{i=1}^{18} \alpha_i \cdot 10^{{L_i}/{10}} \Big) $$
+    
+$$
+        = - 10 \cdot log \Big(\frac{\sum^{18}_{i=1} 10^{{L_i}\cdot0.1} - \sum^{18}_{i=1} \alpha_i \cdot 10^{{L_i}\cdot0.1} }{\sum^{18}_{i=1} 10^{{L_i}\cdot0.1}} \Big)  $$
+
 
 \begin{equation}
-         \mathcolorbox{EQColor}{DL_\alpha = -10\cdot log \big( \frac{\sum_{i=1}^{18} 10^{0.1 \cdot L_i} \cdot \alpha_{si} }{\sum^{18}_{i=1} 10^{0.1 \cdot L_i} }\big)}
+         \mathcolorbox{EQColor}{DL_\alpha = -10\cdot log \big( 1- \frac{\sum_{i=1}^{18} 10^{0.1 \cdot L_i} \cdot \alpha_{si} }{\sum^{18}_{i=1} 10^{0.1 \cdot L_i} }\big)}
     \label{eq:DL_a}
 \end{equation}
 
