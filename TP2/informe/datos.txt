@@ -1,0 +1,11 @@
+Para el proyecto de sala de conferencia, ustedes conforman el Grupo G4.
+
+Los datos de proyecto son:
+Largo de sala: 13,9 m
+Ancho de sala: 7,5 m
+Altura de sala: 3.4 m
+
+
+El archivo que envíen deberá tener el nombre:
+
+deAguirre-Luna-Rizzo-Proy2019-2C.pdf
