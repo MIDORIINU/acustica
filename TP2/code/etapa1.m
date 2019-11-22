@@ -1,5 +1,9 @@
 close all, clear all, clc;
 
+% Graficos:
+
+images_directory= '../informe/img';
+
 %modos_resonancia = dlmread('modos_resonancia_sub.txt',' ');
 Temp_ensayo = 20;
 C = 332 + 0.608 * Temp_ensayo;
@@ -48,15 +52,56 @@ num160 = sum(141 < f(:) & f(:) < 178);
 num200 = sum(178 < f(:) & f(:) < 224);
 num250 = sum(224 < f(:) & f(:) < 229);
 %12.5,16,20,25,31.5,40,50,63 ,80,100 ,125,160,200,250
-
-figure(1)
-hold on;
-
 prices = [num12_5,num16,num20,num25,num31_5,num40,num50,num63 ,num80,num100 ,num125,num160,num200];
-bar(prices)
-set(gca,'xticklabel',{'12.5','16','20','25','31.5','40','50','63','80','100','125','160','200'});
-grid on;
-xlabel('Frecuencia central de tercio de octava')
-ylabel('Cantidad de modos')
-hold off;
+
+
+Banda_freq = [12.5, 16, 20, 25, 31.5, 40, 50, 63, 80, 100, 125, 160, 200];
+
+figure1 = figure('WindowState','maximized');
+
+% Create axes
+axes1 = axes('Parent',figure1);
+hold(axes1,'on');
+
+
+bar1 = bar(axes1, prices);
+
+
+% Create ylabel
+ylabel('Cantidad de modos');
+
+% Create xlabel
+xlabel('Frecuencia central de tercio de octava');
+
+title(axes1, 'Densidad de modos');
+
+ylim(axes1,[0 40]);
+box(axes1, 'on');
+
+% Set the remaining axes properties
+set(axes1,'XGrid','on','XMinorGrid','off','XTick',...
+    ( 1: length(Banda_freq) ),'XTickLabel',...
+    cellfun(@num2str,num2cell(Banda_freq),'uni',false),'YGrid','on','YMinorGrid',...
+    'on');
+
+xtickangle(axes1,45);
+
+
+
+
+fprintf(...
+    'Salvando el gráfico en un archivo "PNG"......');
+
+% Salvo el gráfico en un archivo.
+saveas(figure1, fullfile(images_directory, ...
+    'modos_resonancia.png'));
+
+% Generación completa.
+fprintf('Listo\n\n');
+
+
+
+
+
+
 

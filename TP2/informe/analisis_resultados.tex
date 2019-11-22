@@ -1,19 +1,23 @@
-\par Pasamos a verificar el que se cumple el criterio de Bonello, observando los resultados obtenidos por el programa \quotemarks{\textbf{amroc}}. En la figura \ref{fig:modos_resonancia}, podemos ver que se observa con el requerimiento de que \textbf{la curva resultante debe ser monótona creciente}. Notamos que en las frecuencias centrales de $20Hz$, $31.5Hz$ y $40Hz$, se produce un decremento, pero este no afecta dada la salvedad en que cuando se produce el decremento, se tiene la misma cantidad de modos en dos tercios de octava sucesivos. Además, esto ocurre a frecuencias muy bajas del rango audible.
+\par Pasamos a verificar el que se cumple el criterio de Bonello, observando los resultados obtenidos por el programa \quotemarks{\textbf{amroc}}. En la figura \figref{fig:modos_resonancia}, podemos ver que se observa con el requerimiento de que \textbf{la curva resultante debe ser monótona creciente}. Notamos que en las frecuencias centrales de $20Hz$, $31.5Hz$ y $40Hz$, se produce un decremento, pero este no afecta dada la salvedad en que cuando se produce el decremento, se tiene la misma cantidad de modos en dos tercios de octava sucesivos. Además, esto ocurre a frecuencias muy bajas del rango audible.
 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{./img/modos_resonancia.png}
+	\includegraphics[width=1\textwidth]{./img/modos_resonancia.png}
 	\caption{Densidad de nodos por banda de tercio de octava}
 	\label{fig:modos_resonancia}
 \end{figure}
 
 \newpage
 
-\begin{table}[]
+\begin{table}[H]
+\setlength\arrayrulewidth{1pt}
+\arrayrulecolor{TABLEColor}
     \centering
-    \begin{tabular}{c|c|c|c|c}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
 N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
+\hline \hline
 1&12.34 Hz&G-1&1-0-0&ax  \\
 2&22.87 Hz&F0\#&0-1-0&ax\\
 3&24.68 Hz&G0&2-0-0&ax\\
@@ -61,11 +65,13 @@ N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
 45&87.02 Hz&F2&6-2-0&tan\\
 46&88.65 Hz&F2&2-3-1&obl\\
 47&89.34 Hz&F2&7-1-0&tan\\
-
+\hline
     \end{tabular}
     \quad
-    \begin{tabular}{c|c|c|c|c|c}
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
 N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
+\hline \hline
 48&89.58 Hz&F2&6-0-1&tan\\
 49&91.47 Hz&F2\#&0-4-0&ax\\
 50&91.88 Hz&F2\#&5-2-1&obl\\
@@ -113,6 +119,7 @@ N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
 92&114.33 Hz&A2\#&0-5-0&ax\\
 93&114.61 Hz&A2\#&4-1-2&obl\\
 94&115 Hz&A2\#&1-5-0&tan\\
+\hline
     \end{tabular}
     \caption{Datos obtenidos por el programa}
     \label{tab:datos_obtenidos_programa}
@@ -121,45 +128,56 @@ N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
 
 \newpage
 
-\par Luego en el cuadro \ref{tab:datos_obtenidos_programa}, verificamos el criterio el cuál \textbf{no deben existir modos dobles}, para las frecuencias obtenidas cuando la densidad de modos es menor a cinco.\\
+\par Luego en el cuadro \tableref{tab:datos_obtenidos_programa}, verificamos el criterio el cuál \textbf{no deben existir modos dobles}, para las frecuencias obtenidas cuando la densidad de modos es menor a cinco.\\
 
 
 \par Previamente, mencionamos que los modos son calculados hasta alcanzar la \textit{frecuencia de Schroeder}. Dicha frecuencia se calcula según la ecuación \eqref{eq::freq_schroeder}.
 
-\par Considerando, la norma \textbf{DIN 18041} pensada para discurso en sala, se establece un tiempo de reverberación $RT60 = 0.8seg$ por lo tanto, según el software \textbf{amroc}, se obtiene que la frecuencia de Schroeder es:
+\par Considerando, la norma \textbf{DIN 18041} pensada para discurso en sala, se establece un tiempo de reverberación $RT60 = 0.8s$ por lo tanto, según el software \textbf{amroc}, se obtiene que la frecuencia de Schroeder es:
 
 \begin{equation}
-    f_s = 1893 \cdot \sqrt{\frac{TR}{V}} = 95Hz
+    \boxed{f_s = 1893 \cdot \sqrt{\frac{TR}{V}} = 95Hz}
     \label{eq::freq_schroeder}
 \end{equation}
 
 \par La frecuencia de Schroeder está en la zona de transición de la respuesta en frecuencia de un recinto que separa la región de baja frecuencia, dominada por modos separados, y la región de frecuencias dominada por una gran superposición de modos, hasta percibirse como un continuo.
 
-\par También se obtiene la distancia crítica mediante la ecuación \ref{eq::distancia_critica}:
+\par También se obtiene la distancia crítica mediante la ecuación \eqref{eq::distancia_critica}:
 
 \begin{equation}
-    D_{crítica} = 0.057 \cdot \sqrt{ \frac{Q \cdot V}{T_{60}}}= 1.2m
+    \boxed{D_{crítica} = 0.057 \cdot \sqrt{ \frac{Q \cdot V}{T_{60}}}= 1.2m}
     \label{eq::distancia_critica}
 \end{equation}
 
 \par Cuyo valor necesitaremos para analizar los materiales que se incluirán en la sala para la \textit{ETAPA 2}.\\
 
-\par Finalmente, dados las medidas de la sala, se realizó un bosquejo de como esta será construida. Utilizando el software \textit{Home By Me} se presenta en la figura \ref{fig:vista_sup_sala} una vista superior de la sala a construir:
+\par Finalmente, dados las medidas de la sala, se realizó un bosquejo de como esta será construida. Utilizando el software \textit{Home By Me} se presenta en la figura~\figref{fig:vista_sup_sala} una vista superior de la sala a construir, y en la figura \figref{fig:vista_3D_sala}~una vista 3D.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{./img/sala.png}
+	\includegraphics[width=1\textwidth]{./img/sala.png}
 	\caption{Vista superior de la sala de conferencias}
 	\label{fig:vista_sup_sala}
 \end{figure}
 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./img/sala3D.png}
+	\caption{Vista 3D de la sala de conferencias}
+	\label{fig:vista_3D_sala}
+\end{figure}
+
+
 \par En el cuadro se presentan los datos de las distancias entre butacas:
 
-\begin{table}
+\begin{table}[H]
+\setlength\arrayrulewidth{1pt}
+\arrayrulecolor{TABLEColor}
     \centering
     \begin{tabular}{|c|c|} \hline
         Distancia horizontal entre butacas & -  \\ \hline
-        Distancia posterior entre butacas  & -  \\ \hline
+        Distancia posterior entre butacas  & 45cm  \\ \hline
     \end{tabular}
     \caption{Datos de disposición de butacas}
     \label{tab:my_label}
