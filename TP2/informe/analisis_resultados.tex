@@ -1,4 +1,4 @@
-\par Pasamos a verificar el que se cumple el criterio de Bonello, observando los resultados obtenidos por el programa \quotemarks{\textbf{amroc}}. En la figura \figref{fig:modos_resonancia}, podemos ver que se observa con el requerimiento de que \textbf{la curva resultante debe ser monótona creciente}. Notamos que en las frecuencias centrales de $20Hz$, $31.5Hz$ y $40Hz$, se produce un decremento, pero este no afecta dada la salvedad en que cuando se produce el decremento, se tiene la misma cantidad de modos en dos tercios de octava sucesivos. Además, esto ocurre a frecuencias muy bajas del rango audible.
+\par Pasamos a verificar que se cumple el criterio de Bonello, observando los resultados obtenidos por el programa \quotemarks{\textbf{amroc}}. En la figura \figref{fig:modos_resonancia}, podemos ver que se observa con el requerimiento de que \textbf{la curva resultante debe ser monótona creciente}. Notamos que en las frecuencias centrales de $20Hz$, $31.5Hz$ y $40Hz$, se produce un decremento, pero este no afecta dada la salvedad de que cuando se produce el decremento se tiene la misma cantidad de modos en dos tercios de octava sucesivos. Además, esto ocurre a frecuencias muy bajas del rango audible.
 
 
 \begin{figure}[H]
@@ -155,7 +155,7 @@ N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{./img/sala.png}
+	\includegraphics[width=0.6\textwidth]{./img/sala.png}
 	\caption{Vista superior de la sala de conferencias}
 	\label{fig:vista_sup_sala}
 \end{figure}
@@ -176,9 +176,19 @@ N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
 \arrayrulecolor{TABLEColor}
     \centering
     \begin{tabular}{|c|c|} \hline
-        Distancia horizontal entre butacas & -  \\ \hline
-        Distancia posterior entre butacas  & 45cm  \\ \hline
+        Distancia horizontal entre butacas & 0 cm  \\ \hline
+        Distancia posterior entre butacas  & 45 cm  \\ \hline
     \end{tabular}
     \caption{Datos de disposición de butacas}
     \label{tab:my_label}
 \end{table}
+
+\par Para el diseño de la sala se consideró mantener equidistante al orador, respecto al público. Se presentan pasillos entre las filas de las butacas para el fácil acceso a los asientos, tres puertas dobles para reducir el tiempo de desalojo en caso de emergencia. Se consideraron filas de butacas contra las paredes con pasillos amplios en su frente, destinadas a posibles tareas periodísticas. La sala posee capacidad para 120 personas. Se adjunta (Figura \figref{fig:plano}) a continuación el boceto de un plano estimado de la sala propuesta, este podrá modificarse en la implementación de fonoabsorbentes. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./img/sala_medidas.jpg}
+	\caption{Boceto del plano de la Sala de Conferencias.}
+	\label{fig:plano}
+\end{figure}
