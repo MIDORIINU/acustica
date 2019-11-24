@@ -52,10 +52,10 @@ num160 = sum(141 < f(:) & f(:) < 178);
 num200 = sum(178 < f(:) & f(:) < 224);
 num250 = sum(224 < f(:) & f(:) < 229);
 %12.5,16,20,25,31.5,40,50,63 ,80,100 ,125,160,200,250
-prices = [num12_5,num16,num20,num25,num31_5,num40,num50,num63 ,num80,num100 ,num125,num160,num200];
+prices = [num31_5,num40,num50,num63 ,num80,num100 ,num125,num160,num200];
 
 
-Banda_freq = [12.5, 16, 20, 25, 31.5, 40, 50, 63, 80, 100, 125, 160, 200];
+Banda_freq = [31.5, 40, 50, 63, 80, 100, 125, 160, 200];
 
 figure1 = figure('WindowState','maximized');
 
@@ -65,6 +65,9 @@ hold(axes1,'on');
 
 
 bar1 = bar(axes1, prices);
+
+text(1:length(prices),prices,num2str(prices'),'vert','bottom',...
+    'horiz','center','FontSize',20);
 
 
 % Create ylabel
@@ -82,7 +85,7 @@ box(axes1, 'on');
 set(axes1,'XGrid','on','XMinorGrid','off','XTick',...
     ( 1: length(Banda_freq) ),'XTickLabel',...
     cellfun(@num2str,num2cell(Banda_freq),'uni',false),'YGrid','on','YMinorGrid',...
-    'on');
+    'on','FontSize',20);
 
 xtickangle(axes1,45);
 
