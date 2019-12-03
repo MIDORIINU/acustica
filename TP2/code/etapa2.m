@@ -6,6 +6,7 @@ H_sala = 3.4;       %m
 L_sala = 13.9;      %m
 W_sala = 7.5;       %m
 V_sala = 346.8;     %m^3
+Vol_sala = H_sala*L_sala*W_sala;
 
 Sup_puertas = 3 * 3; %9m^2
 
@@ -58,14 +59,22 @@ xv = 1:length(TR_optimos(:,1));
 figure(1)
 hold on;
 
-grid on;
+
+
+
  
 plot(xv,TR_optimos(:,2));
-set(gca, 'XTickLabel',TR_optimos(:,1));
 plot(xv,TR_optimos(:,2)+TR_optimos(:,2).*0.2,'--');
 plot(xv,TR_optimos(:,2)-TR_optimos(:,2).*0.2,'--');
 
-legend('TR optimo','TR optimo + 20%','TR optimo - 20%')
+set(gca, 'XTickLabel',{'125','','250','','500','','1000','','2000','','4000'});
+
+legend('TR óptimo','TR óptimo + 20%','TR óptimo - 20%')
+grid on;
+
+xlabel('Frecuencia [Hz]')
+ylabel('Tiempo de reverberación [seg]')
+
 hold off;
 
 %% Sala con materiales (SIN MUEBLES)
@@ -87,8 +96,12 @@ plot(xv,TR_conMat_sinMuebles);
 
 plot(xv,TR_optimos(:,2)+TR_optimos(:,2).*0.2,'--');
 plot(xv,TR_optimos(:,2)-TR_optimos(:,2).*0.2,'--');
-set(gca, 'XTickLabel',TR_optimos(:,1));
-legend('TR optimo','TR con Materiales, sin muebles','TR optimo + 20%','TR optimo - 20%')
+set(gca, 'XTickLabel',{'125','','250','','500','','1000','','2000','','4000'});
+legend('TR óptimo','TR con Materiales, sin Muebles','TR óptimo + 20%','TR óptimo - 20%')
+
+xlabel('Frecuencia [Hz]')
+ylabel('Tiempo de reverberación [seg]')
+
 hold off;
 
 %% Sala con muebles y materiales (SIN PERSONAS)
@@ -103,17 +116,19 @@ hold on;
 grid on;
  
 plot(xv,TR_optimos(:,2));
-plot(xv,TR_conMat_sinMuebles);
+%plot(xv,TR_conMat_sinMuebles);
 plot(xv,TR_conMatyMueb);
 
 plot(xv,TR_optimos(:,2)+TR_optimos(:,2).*0.2,'--');
 plot(xv,TR_optimos(:,2)-TR_optimos(:,2).*0.2,'--');
-set(gca, 'XTickLabel',TR_optimos(:,1));
-legend('TR optimo','TR con Materiales y sin muebles','TR con Materiales y Muebles','TR optimo + 20%','TR optimo - 20%')
+set(gca, 'XTickLabel',{'125','','250','','500','','1000','','2000','','4000'});
+legend('TR óptimo','TR con Materiales y Muebles','TR óptimo + 20%','TR óptimo - 20%')
+xlabel('Frecuencia [Hz]')
+ylabel('Tiempo de reverberación [seg]')
 hold off;
 
 %% Sala con personas
-Butacas_ocupadas = Cant_butacas * 0.75;
+Butacas_ocupadas = Cant_butacas * 0.75; % Consideramos un 75% de ocupacion
 Butacas_vacias = Cant_butacas - Butacas_ocupadas;
 
 A2 = A_Local_vacio + Butacas_vacias .* Alpha_butacas + Butacas_ocupadas .* Alpha_adulto_butacasTap;
@@ -125,14 +140,17 @@ hold on;
 grid on;
  
 plot(xv,TR_optimos(:,2));
-plot(xv,TR_conMat_sinMuebles);
+%plot(xv,TR_conMat_sinMuebles);
 plot(xv,TR_conMatyMueb);
-plot(xv,TR_conPersonas,'LineWidth', 3);
+plot(xv,TR_conPersonas);
 
 plot(xv,TR_optimos(:,2)+TR_optimos(:,2).*0.2,'--');
 plot(xv,TR_optimos(:,2)-TR_optimos(:,2).*0.2,'--');
-set(gca, 'XTickLabel',TR_optimos(:,1));
-legend('TR optimo','TR con Materiales y sin muebles','TR con Materiales y Muebles','TR con Personas','TR optimo + 20%','TR optimo - 20%')
+set(gca, 'XTickLabel',{'125','','250','','500','','1000','','2000','','4000'});
+legend('TR óptimo','TR con Materiales y Muebles','TR con Personas','TR óptimo + 20%','TR óptimo - 20%')
+xlabel('Frecuencia [Hz]')
+ylabel('Tiempo de reverberación [seg]')
+
 hold off;
 
 %% Sala con fonoAbsorbentes
@@ -153,6 +171,37 @@ plot(xv,TR_conFonoabsorbentes,'LineWidth', 3);
 
 plot(xv,TR_optimos(:,2)+TR_optimos(:,2).*0.2,'--');
 plot(xv,TR_optimos(:,2)-TR_optimos(:,2).*0.2,'--');
-set(gca, 'XTickLabel',TR_optimos(:,1));
-legend('TR optimo','TR con Personas', 'TR con Fonoabsorbentes','TR optimo + 20%','TR optimo - 20%')
+
+set(gca, 'XTickLabel',{'125','','250','','500','','1000','','2000','','4000'});
+legend('TR óptimo','TR con Personas', 'TR con Fonoabsorbentes','TR óptimo + 20%','TR óptimo - 20%')
+
+xlabel('Frecuencia [Hz]')
+ylabel('Tiempo de reverberación [seg]')
+
+
 hold off;
+
+%% Nivel de inteligibilidad de la palabra
+% En una sala que tiene un valor bajo de %Alcons es más sencillo entenderse que en una que tiene
+% un valor alto de %Alcons.
+
+% CONSIDERO PARA LOS CALCULOS QUE LA MAYOR DISTANCIA AL ORADOR ES DE 7m
+
+Q = 2; % Factor de directividad de la fuente sonora en la dirección considerada
+d = 7; % Distancia entre emisor y receptor en metros
+
+alpha_deSala = A3 / Sup_total;
+% Para el calculo de R, utilizo la banda de 2Khz
+R = (0.161* Vol_sala)/(TR_conFonoabsorbentes(5) * (1- alpha_deSala(5))); % Constante acustica de la sala en m^2
+
+
+Distancia_critica = 0.15* sqrt(Q*R); %2.0435m
+
+% Como Distancia_critica * 3.16 < d  (6.45746 < 7)
+
+AL_cons = 9 * TR_conFonoabsorbentes(5);
+% AL_cons = (200 * Distancia_critica^2 * TR_conFonoabsorbentes(5)^2)/(Q*Vol_sala);
+% se usaaria la ecuación de abajo si Distancia_critica *3.16 > d.
+
+IL_ = 100 - AL_cons
+
