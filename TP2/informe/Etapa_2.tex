@@ -1,6 +1,6 @@
-\par Para esta etapa se busca calcular los tiempos de reverberación óptimos y diseñar el tratamiento acústico de la sala, teniendo en cuenta que la misma va a ser utilizada para palabra. Dicho tratamiento consta de la utilización de materiales fonoabsorbentes.\\
+\par Para esta etapa se busca calcular los tiempos de reverberación óptimos y diseñar el tratamiento acústico de la sala, teniendo en cuenta que la misma va a ser utilizada para palabra. Dicho tratamiento consta de la utilización de materiales fonoabsorbentes en paredes y asientos.\\
 
-\par Para realizar este tratamiento, seguiremos los pasos indicados en la guía de informe del proyecto. En primer lugar, calculamos el tiempo de reverberación ($TR$) óptimo dado el volumen y el uso que se le dará a la sala (en nuestro caso, la palabra). Utilizando las curvas de \quotemarks{TR óptimos según el volumen y destino de uso} de \textit{Knudsen}, y gracias a las fórmulas provistas por la cátedra que modelan dichas curvas, podemos calcular los tiempos de reverberación óptimos como se muestra en el cuadro \ref{tab:ecuaciones_caluclo_TRoptimo}:
+\par Para realizar este tratamiento, comezamos calculando el tiempo de reverberación ($TR$) óptimo considerando el volumen de la sala y el uso que se le dará a la misma (en nuestro caso, la palabra). Utilizando las curvas de \quotemarks{TR óptimos según el volumen y destino de uso} de \textit{Knudsen}, y gracias a las fórmulas provistas por la cátedra que modelan dichas curvas, podemos calcular los tiempos de reverberación óptimos presentes en el cuadro~\tableref{tab:ecuaciones_caluclo_TRoptimo} :
 
 \begin{table}[h]
     \centering
@@ -14,12 +14,12 @@
     \label{tab:ecuaciones_caluclo_TRoptimo}
 \end{table}
 
-\par Utilizando el dato del volumen de la sala que se tiene el cuadro \ref{tab:medidas_de_sala}, tenemos que $V = 346.8 m^3$. Por lo tanto los $TR_{optimos}$ obtenidos se presentan en el cuadro \ref{tab:TRoptimos_de_sala}. Como criterio de diseño, debemos considerar una banda de tolerancia para los valores obtenidos. Consideramos prudente una banda de tolerancia del 20\%:
+\par A partir del volumen resultante de la sala, $V = 346.8 m^3$, se obtiene el cuadro~\tableref{tab:medidas_de_sala}. Por lo tanto, los $TR_{optimos}$ obtenidos se presentan en el cuadro~\tableref{tab:TRoptimos_de_sala}. Como criterio de diseño, debemos considerar una banda de tolerancia para los valores obtenidos. Consideramos prudente una banda de tolerancia del 20\%:
 
 \begin{table}[h]
     \centering
     \begin{tabular}{|c|c|} \hline
-         $TR_{optimos}$ [seg] & $\pm Tolerancia$ [seg] \\ \hline 
+         $TR_{optimos}$ [seg] & $\Delta TR$ [seg] \\ \hline 
          $TR_{125} = 1.0704$  & $0.2141$ \\ \hline
          $TR_{250} = 0.8534$  & $0.1707$\\ \hline
          $TR_{500} = 0.7372$  & $0.1474$ \\ \hline
@@ -28,17 +28,17 @@
     \label{tab:TRoptimos_de_sala}
 \end{table}
 
-\par En el gráfico \ref{fig:TR_optimosYtolerancia} se muestran los valores obtenidos junto con sus bandas de tolerancia para frecuencias de octavas comprendidas entre 125 y 4000Hz.
+\par En la figura~\figref{fig:TR_optimosYtolerancia} se muestran los valores obtenidos junto con sus bandas de tolerancia para frecuencias de octavas comprendidas entre 125 y 4000Hz.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{./img/TR_optimosYtolerancia.png}
-	\caption{Gráfico de valores de $TR_{optimo}$ y sus bandas de tolerancia LO TENGO QUE CAMBIAR}
+	\caption{Gráfico de valores de $TR_{optimo}$ y sus bandas de tolerancia}
 	\label{fig:TR_optimosYtolerancia}
 \end{figure}
 
-\par A continuación seleccionamos los materiales con que estarán construidas las superficies interiores del recinto (piso, techo, paredes, puertas) y el tipo y cantidad de muebles. Para esto, consideramos las recomendaciones de diseño acústico para aulas y salas de conferencias del \quotemarks{\textit{Código Técnico de la Edificación}} (\textbf{CTE} España), donde se recomienda material absorbente acústico en toda la superficie del techo, una pared detras del orador reflectante y las demás absorbentes. Los materiales para el recinto se muestran en el cuadro \ref{tab:materiales_construccion_recinto}.
+\par A continuación, seleccionamos los materiales con que estarán construidas las superficies interiores del recinto (piso, techo, paredes, puertas) y la cantidad de muebles. Para esto, consideramos las recomendaciones de diseño acústico para aulas y salas de conferencias del \quotemarks{\textit{Código Técnico de la Edificación}} (\textbf{CTE} España), donde se recomienda material absorbente acústico en toda la superficie del techo, una pared detrás del orador reflectante y las demás absorbentes. Los materiales para el recinto se muestran en el cuadro~\tableref{tab:materiales_construccion_recinto}.
 
 \begin{table}[h]
     \centering
@@ -50,16 +50,195 @@
         Pared (detrás orador) & Ladrillo pintado & 47.26 $m^2$ & 0.01 & 0.01 & 0.02 & 0.02 & 0.02 & 0.02 \\ \hline
         Techo & Enlucido &13.9$m^2$ & 0.01 & 0.03 & 0.04 & 0.05 & 0.08 & 0.17 \\ \hline
         Puertas (1.5m x 2m) & Madera maciza & 3 $\times$ 3$m^2$ & 0.05 & 0.11 & 0.10 & 0.09 & 0.08 &  0.10 \\ \hline \hline
-        Butacas & Tapizado 2 & (CANT) & 0.12 & 0.20 & 0.28 & 0.30 & 0.31 & 0.37 \\ \hline
+        Butacas & Tapizado 1 & 120 & 0.12 & 0.20 & 0.28 & 0.30 & 0.31 & 0.37 \\ \hline
         Butaca & Madera & 1 & 0.01 & 0.02 & 0.02 & 0.04 & 0.04 & 0.04 \\ \hline
     \end{tabular}
     \caption{Materiales y objetos para la construcción del recinto}
     \label{tab:materiales_construccion_recinto}
 \end{table}
 
-\par Para las paredes en donde el orador se enfrenta desde el escenario, la recomendación indica que deben ponerse materiales absorbentes, por lo tanto, se eligieron las paredes de papel pintado cuyos coeficientes de absorción sonora era más alta que los demás materiales. Lo mismo para el piso y techo se siguió el mismo criterio. Luego, como buscamos una pared reflejante detrás del orador, se optó por construir dicha pared con ladrillo pintado.
+\par Para las paredes hacia donde el orador expone, la recomendación indica que deben colocarse materiales absorbentes, por lo tanto, se optó por papel pintado, cuyos coeficientes de absorción sonora son más altos que los de los demás materiales. Tanto para el piso y techo se utilizó un criterio semejante, es decir, se consideró un material que se caracterice por tener coeficientes de absorción altos sin que afecte las curvas en altas frecuencias. Así es como se seleccionó la baldoza enlozada para el piso y enlucido para el techo. Luego, como buscabamos una pared reflejante detrás del orador, se optó por construir dicha superficie con ladrillo pintado.
 
 \par Se esperá cumplir con los tiempos de reverberación óptimos para una  \textcolor{red}{ocupación del \textbf{75\%}}.\\
 
-\par A continuación, procedemos con calcular el tiempo de reverberación inicial correspondiente a la sala con muebles y con el estado de ocupación definido, para las octavas con frecuencias centrales comprendidas entre 125 y 4000Hz.
+\par A continuación, procedemos a calcular el tiempo de reverberación inicial correspondiente a la sala equipada con los elementos y muebles elegidos, para tener una noción inicial que sirva de referencia. Para esto, utilizamos la ecuación~\eqref{eq:Calculo_tiempo_reverberacion}, a partir de la cual se puede  calcular el tiempo de reverberación, la cuál considera el área equivalente resultante.
 
+\begin{equation}
+   \mathcolorbox{EQColor}{  TR = \frac{0.163 \cdot V}{A_T} }
+    \label{eq:Calculo_tiempo_reverberacion}
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item $V$: Es el volumen de la sala en $m^3$
+    \item $A_T$: Es el área equivalente de absorción total en el recinto, expresado en $m^2$
+\end{itemize}
+
+\par Para utilizarla, es necesario obtener la expresión de $A$. Primero, calculamos el área equivalente del local sin muebles ni personas, $A_L$, mediante la siguiente expresión:
+
+\begin{equation}
+    A_L = S_{piso} * \alpha_{piso} +S_{techo} * \alpha_{techo} + S_{pared} * \alpha_{pared} + S_{puertas} * \alpha_{puertas}
+\end{equation}
+
+\par Donde, $S_i$ corresponde a las múltiples superficies presentes en la sala y $\alpha_i$, corresponde al coeficiente de absorción asociado a cada material. Estos últimos son datos extraidos de la guía de materiales utilizada para el trabajo.
+
+\par Como segunda instancia, incorporamos los muebles elegidos. Entonces, a la ecuación previa, le sumamos el área equivalente de las butacas a instalar y multiplicamos por la cantidad  utilizada:
+
+\begin{equation}
+    A_1 = A_L + n_{Butacas}\cdot A_{Butacas}
+\end{equation}
+
+\par Luego, considerando el efecto que tienen las personas dentro del recinto, y asumiendo que las butacas se ocupan un 75\%. De acuerdo al tipo de butacas elegido, tapizada tipo 1, el área equivalente de absorción sonora provocado por un adulto en dicha butaca, surge de la expresión:
+
+\begin{equation}
+    A_2 = A_L + n_{ButacasVacias} \cdot A_{Butacas} + n_{ButacasOcupadas} \cdot A_{ButacasOcupadas}
+\end{equation}
+
+\par Dadas estas consideraciones, obtenemos la figura~\figref{fig:TR_optimosYtolerancia} como resultado:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./img/TR_conMat_MueblesYPersonas.png}
+	\caption{Valores de $TR_{optimo}$ comparados con la sala ocupada al 75\%, con materiales y muebles}
+	\label{fig:TR_optimosYtolerancia}
+\end{figure}
+
+\par Observamos que aún considerando el efecto de las personas en la sala, se necesita un tratamiento fonoabsorbente. Observamos que es necesario bajar los valores de tiempo de reverberación para las frecuencias mas bajas y bajar las frecuencias altas a menor medida. Por lo tanto se resolvio colocar Paneles de madera, aglomerado 6 mm, sobre 50 mm lana de vidrio en el 40\% de las paredes que se encuentran frente al orador. Dicho material posee las características que se indican en el cuadro~\tableref{tab:datos_mat_fonoabsorbente} cuyo efecto radica mayoritariamente en las bajas frecuencias, que es lo que necesitamos.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c||c|c|c|c|c|c|} \hline
+         Material Elegido & Sup. & \multicolumn{6}{|c|}{Coeficiente $\alpha$} \\ \hline
+        \multicolumn{2}{|c|}{Frecuencia [Hz]:} & 125 & 250 & 500 & 1000 & 2000 & 4000 \\ \hline
+        \makecell{Panel madera, aglomerado 6 mm,\\ sobre 50 mm lana de vidrio} & 47.46$m^2$ & 0.61 &0.65&0.24&0.12&0.10&0.06 \\ \hline     
+    \end{tabular}
+    \caption{Material fonoabsorbente elegido}
+    \label{tab:datos_mat_fonoabsorbente}
+\end{table}
+
+\par Finalmente, volvemos a calcular el tiempo de reverberación considerando los cambios del fonoabsorbente elegido mediante:
+
+\begin{equation}
+    A_T = A_2 - (0.4 \cdot S_{ParedFrenteOrador} * \alpha_{ParedFrenteOrador}) + (0.4 \cdot S_{ParedFrenteOrador} * \alpha_{Fonoabsorbente})
+\end{equation}
+
+\par Obteniendose la figura~\figref{fig:TR_fonoabsorbente}:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./img/TR_conFonoabsorbentes.png}
+	\caption{Valores de $TR_{optimo}$ comparados con la sala ocupada al 75\%, solo con materiales y muebles, y con el material fonoabsorbente}
+	\label{fig:TR_fonoabsorbente}
+\end{figure}
+
+\par Dada la figura previa, observamos que la curva de $TR$ con el recinto tratado con fonoabsorbentes se mantiene dentro de los límites de tolerancia considerados.
+
+\par Dado esto, pasamos a calcular la inteligibilidad de la palabra dentro del recinto. Sabemos que una palabra consta de vocales y consonantes. La comprensión de un mensaje oral depende fundamentalmente de la correcta percepción de sus consonantes, por lo tanto es de vital importancia percibir bien las altas frecuencias.
+
+\par En la tabla~\tableref{tab:Contribucion_inteligibilidad_x_banda_de_octava} podemos observar una clasificación, en bandas de octavas, de la contribución de las frecuencias a la inteligibilidad de la palabra y al nivel sonoro. En ella se aprecia que las frecuencias de la octava centrada en 2 kHz son las que tienen mayor influencia en la inteligibilidad de la palabra. Por este motivo en la práctica, se suelen hacer los cálculos para 2 kHz.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|} \hline
+        Frecuencias [Hz] & 250 & 500 & 1k & 2k & 4k  \\ \hline
+        Nivel sonoro &22\%& 46\% & 20\% &3\% &2\% \\ \hline
+        Inteligibilidad &5\% &13\% &20\% &31\% &26\% \\ \hline
+    \end{tabular}
+    \caption{Contribución de la inteligibilidad de la palabra para cada banda de octava}
+    \label{tab:Contribucion_inteligibilidad_x_banda_de_octava}
+\end{table}
+
+\par Para evaluar la inteligibilidad hay varios métodos, de los cuales, uno de los más difundidos es el que se basa en el estudio de la pérdida real de consonantes.
+
+\par En una sala que tiene un valor bajo de \%Alcons (\textit{Articulation Loss of Consonants} ó Pérdida de consonantes) es más sencillo entenderse que en una que tiene un valor alto de \%Alcons. El valor se basa exclusivamente en el porcentaje de consonantes medio que no pueden llegar a entender los oyentes de una sala, ya que las vocales no son tan necesarias para entender un mensaje.
+
+\par Existe un modelo matemático para el cálculo de dicho valor utilizando uso de la teoría acústica estadística. Peutz dedujo el valor de \%Alcons como la diferencia entre los niveles sonoros de campo directo y de campo reverberante. La ecuación~\eqref{eq:diferencia_L_D_LR} muestra el cálculo de dicho valor el cuál debe interpretarse como la relación señal/ruido en lo que respecta la comprensión del lenguaje.
+
+\begin{equation}
+   \mathcolorbox{EQColor}{ L_D - L_R = 10 \cdot log \left(\frac{Q \cdot R}{ d^2} \right) - 17dB }
+    \label{eq:diferencia_L_D_LR}
+\end{equation}
+%Me dio -11.22 dB
+
+\par En donde:
+\begin{itemize}
+    \item $Q$: El factor de directividad de la fuente sonora en la dirección considerada (Q = 2 en el caso de la voz humana, considerando la dirección frontal del orador).
+    \item $d$: La distancia entre el emisor (orador) y el receptor, en $m$.
+    \item $R$: La constante acústica de la sala, en $m^2$
+\end{itemize}
+
+\par Recordando que la constante $R$ esta dada por:
+
+\begin{equation}
+   \mathcolorbox{EQColor}{ R  = \frac{A}{1- \bar{\alpha}} = \frac{0.161 \cdot V}{T_{60} (1- \bar{\alpha})} }
+\end{equation}
+
+\par En donde:
+\begin{itemize}
+    \item $A$: El área equivalente de absorción sonora de la sala, $m^2$.
+    \item $V$: Volumen de la sala, en $m^3$.
+    \item $T_{60}$: Tiempo de reverberación de la sala, en $seg$.
+    \item $\bar{\alpha}$: Coeficiente medio de absorción de la sala (adimensional).
+    \item $S_L$: Superficie interior del local, en $m^2$.
+\end{itemize}
+
+\par Con:
+
+\begin{equation}
+   \mathcolorbox{EQColor}{ \bar{\alpha} = \frac{\alpha_1 \cdot S_1 + \alpha_2 \cdot S_2 + ... + \alpha_n \cdot S_n}{S_1 +S_2 + ...+ S_n} \approx \frac{A}{S_L} }
+\end{equation}
+
+\par Según Peutz, se define el \textit{nivel de inteligibilidad}, IL\% como:
+
+\begin{equation}
+   \mathcolorbox{EQColor}{ IL_{\%} = 100 - AL_{\%} }
+\end{equation}
+
+\par Y la pérdida de articulación de consonantes \%Alcons:
+
+\begin{equation}
+    \mathcolorbox{EQColor}{ AL_{\%} = 9 \cdot T_{60} }
+    \label{eq:calculoAlcons}
+\end{equation}
+
+\par Dicha ecuación, se utiliza para distancia de público $d>3.16\cdot D_c$, donde $D_c$ es la distancia crítica, en $m$, que se calcula como:
+
+\begin{equation}
+   \mathcolorbox{EQColor}{ D_c = 0.06 \cdot \sqrt{\frac{Q \cdot V}{T_{60} (1- \hat{\alpha})}} = 0.15 \cdot \sqrt{Q\cdot R} }
+\end{equation}
+
+\par Como los cálculos se realizan para el público que se encuentra a mayor distancia del orador (es decir, 7m), estamos utilizando la ecuación de $Alcons_{\%}$ correcta.\\
+
+\par Ahora podemos calcular la inteligibilidad de la palabra utilizando las ecuaciones dadas:
+
+\begin{equation*}
+        R  = \frac{0.161 \cdot V}{TR_{2kHz} (1- \bar{\alpha_{2kHz}})} =  \frac{0.161 \cdot 354.45 m^3}{0.7746 seg \cdot (1- 0.2061)} =92.7971 m^2
+\end{equation*}
+
+\begin{equation*}
+        D_c = 0.15 \sqrt{Q\cdot R} = 0.15 \sqrt{ 2\cdot 92.7971 m^2} =  2.0435
+\end{equation*}
+
+\par Entonces como $D_c \cdot3.16 = 6.46m < d = 7m$, podemos decir que utilizamos la correcta expresión de \%Alcons:
+
+\begin{equation*}
+   \boxed{ IL_{\%} = 100 - AL_{\%} = 100 - 9\cdot TR_{2kHz} =  93.0283\% }
+\end{equation*}
+
+\par Entonces \textcolor{red}{ $IL_{\%} = 93.03\%$ } $> 90\% $ lo cuál era el objetivo principal del diseño. Por lo tanto se cumple lo pedido.\\
+
+\par Dado que $D_c = 2.0435m$, observamos que existen butacas que se encuentran a $1m$ del orador, y en ese caso deberíamos cambiar la expresión~\eqref{eq:calculoAlcons} para calcular la pérdida de consonantes por la expresión~\eqref{eq:calculoAlconsAlternativo}, utilizando $d=1m$:
+
+\begin{equation*}
+    \boxed{ AL_{\%} = \frac{200 \cdot d^2 \cdot TR_{2kHz}^2}{Q\cdot V} = \frac{200 \cdot 1m^2 \cdot 0.6 seg^2}{2 \cdot 354.45m^3} = 0.1693 }
+    \label{eq:calculoAlconsAlternativo}
+\end{equation*}
+
+\par Por lo tanto, tendríamos un nivel de inteligibilidad de la palabra de $IL_{\%}$ =  99.8307\%. Por lo tanto, no importante hacer que todas las filas de butacas se encuentren a partir de la distancia crítica para el recinto diseñado. Para verificar, podemos ver en la figura~\figref{fig:nivel_inteligibilidad} un gráfico de la ecuación~ \eqref{eq:calculoAlconsAlternativo}, en el cuál verificamos que el nivel de inteligibilidad se mantiene por encima de 90\% hasta la distancia crítica.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{./img/nivel_inteligibilidad.png}
+	\caption{Inteligibilidad de la palabra en función de la distancia del orador hasta el receptor más cercano}
+	\label{fig:nivel_inteligibilidad}
+\end{figure}

@@ -18,10 +18,6 @@
     \hline
 N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
 \hline \hline
-1&12.34 Hz&G-1&1-0-0&ax  \\
-2&22.87 Hz&F0\#&0-1-0&ax\\
-3&24.68 Hz&G0&2-0-0&ax\\
-4&25.98 Hz&G0\#&1-1-0&tan\\
 5&33.64 Hz&C1&2-1-0&tan\\
 6&37.01 Hz&D1&3-0-0&ax\\
 7&43.51 Hz&F1&3-1-0&tan\\
@@ -65,6 +61,8 @@ N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
 45&87.02 Hz&F2&6-2-0&tan\\
 46&88.65 Hz&F2&2-3-1&obl\\
 47&89.34 Hz&F2&7-1-0&tan\\
+48&89.58 Hz&F2&6-0-1&tan\\
+49&91.47 Hz&F2\#&0-4-0&ax\\
 \hline
     \end{tabular}
     \quad
@@ -72,8 +70,6 @@ N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
     \hline
 N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
 \hline \hline
-48&89.58 Hz&F2&6-0-1&tan\\
-49&91.47 Hz&F2\#&0-4-0&ax\\
 50&91.88 Hz&F2\#&5-2-1&obl\\
 51&92.26 Hz&F2\#&5-3-0&tan\\
 52&92.3 Hz&F2\#&1-4-0&tan\\
@@ -133,23 +129,20 @@ N° It. & Frequencia & Nota & $p$,$q$,$r$ & Dirección \\
 
 \par Previamente, mencionamos que los modos son calculados hasta alcanzar la \textit{frecuencia de Schroeder}. Dicha frecuencia se calcula según la ecuación \eqref{eq::freq_schroeder}.
 
-\par Considerando, la norma \textbf{DIN 18041} pensada para discurso en sala, se establece un tiempo de reverberación $RT60 = 0.8s$ por lo tanto, según el software \textbf{amroc}, se obtiene que la frecuencia de Schroeder es:
-
 \begin{equation}
-    \boxed{f_s = 1893 \cdot \sqrt{\frac{TR}{V}} = 95Hz}
+    \boxed{f_s = 1893 \cdot \sqrt{\frac{TR}{V}}}
     \label{eq::freq_schroeder}
 \end{equation}
 
-\par La frecuencia de Schroeder está en la zona de transición de la respuesta en frecuencia de un recinto que separa la región de baja frecuencia, dominada por modos separados, y la región de frecuencias dominada por una gran superposición de modos, hasta percibirse como un continuo.
+%\par Según los datos provistos obtenidos por el programa, el mismo considera la norma \textbf{DIN 18041} pensada para discurso en sala, que establece un tiempo de reverberación $RT60 = 0.8s$ por lo tanto, según el software \textbf{amroc}, se obtiene que la frecuencia de Schroeder es $95Hz$. Utilizando los valores de la sala diseñada, utilizando la ecuación \eqref{eq::freq_schroeder} obtenemos que la frecuencia de Schroeder es 
 
-\par También se obtiene la distancia crítica mediante la ecuación \eqref{eq::distancia_critica}:
 
-\begin{equation}
-    \boxed{D_{crítica} = 0.057 \cdot \sqrt{ \frac{Q \cdot V}{T_{60}}}= 1.2m}
-    \label{eq::distancia_critica}
-\end{equation}
 
-\par Cuyo valor necesitaremos para analizar los materiales que se incluirán en la sala para la \textit{ETAPA 2}.\\
+
+
+\par La frecuencia de Schroeder está en la zona de transición de la respuesta en frecuencia de un recinto que separa la región de baja frecuencia, dominada por modos separados, y la región de frecuencias dominada por una gran superposición de modos, hasta percibirse como un continuo.\\
+
+\par También mediante los resultados del programa se obtiene la distancia crítica cuyo valor es igual a $1.2m$, cuyo valor calcularemos nuevamente para analizar los materiales que se incluirán en la sala para la \textit{ETAPA 2}.\\
 
 \par Finalmente, dados las medidas de la sala, se realizó un bosquejo de como esta será construida. Utilizando el software \textit{Home By Me} se presenta en la figura~\figref{fig:vista_sup_sala} una vista superior de la sala a construir, y en la figura \figref{fig:vista_3D_sala}~una vista 3D.
 
