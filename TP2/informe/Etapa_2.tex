@@ -40,6 +40,10 @@
 
 \par A continuación, seleccionamos los materiales con que estarán construidas las superficies interiores del recinto (piso, techo, paredes, puertas) y la cantidad de muebles. Para esto, consideramos las recomendaciones de diseño acústico para aulas y salas de conferencias del \quotemarks{\textit{Código Técnico de la Edificación}} (\textbf{CTE} España), donde se recomienda material absorbente acústico en toda la superficie del techo, una pared detrás del orador reflectante y las demás absorbentes. Los materiales para el recinto se muestran en el cuadro~\tableref{tab:materiales_construccion_recinto}.
 
+\hfill
+
+\clearpage
+
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c||c|c|c|c|c|c|} \hline
@@ -186,7 +190,7 @@ Donde:
 
 \par Dado esto, pasamos a calcular la inteligibilidad de la palabra dentro del recinto. Sabemos que una palabra consta de vocales y consonantes. La comprensión de un mensaje oral depende fundamentalmente de la correcta percepción de sus consonantes, por lo tanto es de vital importancia percibir bien las altas frecuencias.
 
-\par En la tabla~\tableref{tab:Contribucion_inteligibilidad_x_banda_de_octava} podemos observar una clasificación, en bandas de octavas, de la contribución de las frecuencias a la inteligibilidad de la palabra y al nivel sonoro. En ella se aprecia que las frecuencias de la octava centrada en 2 kHz son las que tienen mayor influencia en la inteligibilidad de la palabra. Por este motivo en la práctica, se suelen hacer los cálculos para 2 kHz.
+\par En el cuadro~\tableref{tab:Contribucion_inteligibilidad_x_banda_de_octava} podemos observar una clasificación, en bandas de octavas, de la contribución de las frecuencias a la inteligibilidad de la palabra y al nivel sonoro. En ella se aprecia que las frecuencias de la octava centrada en 2 kHz son las que tienen mayor influencia en la inteligibilidad de la palabra. Por este motivo en la práctica, se suelen hacer los cálculos para 2 kHz.
 
 \begin{table}[h]
     \centering
@@ -275,17 +279,23 @@ Donde:
 \begin{equation*}
    \boxed{ IL_{\%} = 100 - AL_{\%} = 100 - 9\cdot TR_{2kHz} =  93.82\% }
 \end{equation*}
-93.8152
+
 \par Entonces \textcolor{red}{ $IL_{\%} =93.82\%$ } $> 90\% $ lo cuál era el objetivo principal del diseño. Por lo tanto se cumple lo pedido.\\
 
-\par Dado que $D_c = 2.21m$, observamos que existen butacas que se encuentran a $1m$ del orador, y en ese caso deberíamos cambiar la expresión~\eqref{eq:calculoAlcons} para calcular la pérdida de consonantes por la expresión~\eqref{eq:calculoAlconsAlternativo}, utilizando $d=1m$:
+\par Dado que $D_c = 2.21m$, observamos que existen butacas que se encuentran a $1m$ del orador, y en ese caso deberíamos cambiar la expresión~\eqref{eq:calculoAlcons} para calcular la pérdida de consonantes por la expresión~\eqref{eq:calculoAlconsAlternativo}.
+
+\begin{equation}
+    \mathcolorbox{EQColor}{ AL_{\%} = \frac{200 \cdot d^2 \cdot TR_{2kHz}^2}{Q\cdot V} }
+    \label{eq:calculoAlconsAlternativo}
+\end{equation}
+
+Utilizando $d=1m$ obtenemos:
 
 \begin{equation*}
     \boxed{ AL_{\%} = \frac{200 \cdot d^2 \cdot TR_{2kHz}^2}{Q\cdot V} = \frac{200 \cdot 1m^2 \cdot 0.6872 seg^2}{2 \cdot 354.45m^3} = 0.1939 }
-    \label{eq:calculoAlconsAlternativo}
 \end{equation*}
 
-\par Por lo tanto, tendríamos un nivel de inteligibilidad de la palabra de $IL_{\%}$ =  99.81\%. Por lo tanto, no importante hacer que todas las filas de butacas se encuentren a partir de la distancia crítica para el recinto diseñado. Para verificar, podemos ver en la figura~\figref{fig:nivel_inteligibilidad} un gráfico de la ecuación~ \eqref{eq:calculoAlconsAlternativo}, en el cuál verificamos que el nivel de inteligibilidad se mantiene por encima de 90\% hasta la distancia crítica.
+\par Tendríamos entonces un nivel de inteligibilidad de la palabra de $IL_{\%}$ =  99.81\%. Por lo tanto, no es importante hacer que todas las filas de butacas se encuentren a partir de la distancia crítica para el recinto diseñado. Para verificar, podemos ver en la figura~\figref{fig:nivel_inteligibilidad} un gráfico de la expresión~ \eqref{eq:calculoAlconsAlternativo} en función de la distancia, en el cuál verificamos que el nivel de inteligibilidad se mantiene por encima de 90\% hasta la distancia crítica.
 
 \begin{figure}[H]
 	\centering
